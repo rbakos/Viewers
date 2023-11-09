@@ -103,6 +103,7 @@ function ViewerLayout({
   const leftPanelComponents = leftPanels.map(getPanelData);
   const rightPanelComponents = rightPanels.map(getPanelData);
   const viewportComponents = viewports.map(getViewportComponentData);
+  const panelData = getPanelData;
 
   return (
     <div>
@@ -115,6 +116,9 @@ function ViewerLayout({
         className="relative flex w-full flex-row flex-nowrap items-stretch overflow-hidden bg-black"
         style={{ height: 'calc(100vh - 52px' }}
       >
+        <div className="flex h-full flex-1 flex-col bg-white">
+          LEFT PANE {panelData.id} {panelData.name}
+        </div>
         <React.Fragment>
           {showLoadingIndicator && <LoadingIndicatorProgress className="h-full w-full bg-black" />}
           {/* LEFT SIDEPANELS */}
